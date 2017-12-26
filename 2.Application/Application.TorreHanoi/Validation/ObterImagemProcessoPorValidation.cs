@@ -8,8 +8,8 @@ namespace Application.TorreHanoi.Validation
         internal static ObterImagemProcessoPorResponse ValidationImagem(this string id)
         {
             var response = new ObterImagemProcessoPorResponse();
-
-            if (Guid.TryParse(id, out _))
+            Guid guid = new Guid(id);
+            if (Guid.TryParse(id, out guid))
             {
                 return response;
             }
